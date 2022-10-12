@@ -22,6 +22,18 @@ function sumToN(n) {
   return n + sumToN(n-1) //(5 + 4)
 }
 
+function sumToN2(n) {
+  if(n < 0) {
+    return null;
+  }
+  if (n < 1) {
+    return n;
+  }
+  return n + sumToN(n-1)
+
+}
+
+
 
 console.log(sumToN(5)) // returns 15
 sumToN(1)  // returns 1

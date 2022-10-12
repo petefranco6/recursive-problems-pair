@@ -15,16 +15,23 @@ iceCreamShop([], 'honey lavender'); // false
 
 function iceCreamShop(flavors, favorite) {
   // Your code here
-  if(flavors.length < 1){
-    return false;
-  } else {
-    if(flavors[0] === favorite){
-      return true;
-    }
-  else {
-return iceCreamShop(flavors.slice(1), favorite)
+//   if(flavors.length < 1){
+//     return false;
+//   } else {
+//     if(flavors[0] === favorite){
+//       return true;
+//     }
+//   else {
+// return iceCreamShop(flavors.slice(1), favorite)
+//   }
+// }
+  if(flavors.pop() === favorite) {
+    return true;
   }
-}
+  if(flavors.length < 1) {
+    return false;
+  }
+  return iceCreamShop(flavors, favorite)
 }
 
 console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
